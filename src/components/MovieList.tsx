@@ -1,4 +1,4 @@
-import { type MovieType } from "../data/Movies";
+import { type MovieType } from "../types/MovieType";
 import MovieCard from "./MovieCard";
 
 interface MovieListProps {
@@ -6,11 +6,15 @@ interface MovieListProps {
 }
 
 const MovieList = ({ movies }: MovieListProps) => {
-  return movies.map((movie) => (
-    <div key={movie.id}>
-      <MovieCard movie={movie} />
-    </div>
-  ));
+  return (
+    <section className="movie-grid">
+      {movies.map((movie) => (
+        <div key={movie.id}>
+          <MovieCard movie={movie} />
+        </div>
+      ))}
+    </section>
+  );
 };
 
 export default MovieList;

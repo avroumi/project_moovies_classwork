@@ -10,7 +10,7 @@ const MovieCard = ({ movie }: MovieProps) => {
   const navigate = useNavigate();
 
   return (
-    <article>
+    <article className="movie-card">
       <p>Title: {movie.name}</p>
 
       {movie.image ? (

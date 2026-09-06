@@ -13,6 +13,7 @@ const SearchBar = ({ search, setSearch }: SearchProps) => {
   return (
     <>
       <input
+        className="search-bar"
         value={search}
         ref={searchRef}
         onChange={(e) => setSearch(e.target.value)}

@@ -4,6 +4,7 @@ import MovieDetails from "./pages/MovieDetails";
 import Movies from "./pages/Movies";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
+import "./App.css";
 
 function App() {
   return (

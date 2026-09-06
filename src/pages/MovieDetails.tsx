@@ -42,24 +42,36 @@ const MovieDetails = () => {
   }
 
   return (
-    <article>
-      <button onClick={() => navigate("/")}>Back to Movies</button>
-
-      <p>Title: {movie.name}</p>
-
-      {movie.image ? (
-        <img src={movie.image.medium} alt={movie.name} />
-      ) : (
-        <p>No image</p>
-      )}
-
-      <p>Description: {movie.summary ?? "No description"}</p>
-      <button onClick={() => toggleFavorite(movie.id)}>
-        {favorites.includes(movie.id)
-          ? "Remove from favorites"
-          : "Add to favorites"}
+    <main className="movie-details-page">
+      <button className="back-button" onClick={() => navigate("/")}>
+        ← Back to Home
       </button>
-    </article>
+
+      <section className="movie-details">
+        <div className="movie-details-image">
+          {movie.image ? (
+            <img src={movie.image.original} alt={movie.name} />
+          ) : (
+            <p>No image</p>
+          )}
+        </div>
+
+        <div className="movie-details-content">
+          <h2>{movie.name}</h2>
+
+          <p>{movie.summary ?? "No description"}</p>
+
+          <button
+            className="favorite-button"
+            onClick={() => toggleFavorite(movie.id)}
+          >
+            {favorites.includes(movie.id)
+              ? "Remove from favorites"
+              : "Add to favorites"}
+          </button>
+        </div>
+      </section>
+    </main>
   );
 };
 

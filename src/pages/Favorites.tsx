@@ -33,25 +33,29 @@ const Favorites = () => {
   }
 
   return (
-    <>
-      {favoriteMovies.map((movie) => (
-        <article key={movie.id}>
-          <p>Title: {movie.name}</p>
+    <main className="favorites-page">
+      <h2>My Favorites ❤️</h2>
 
-          {movie.image ? (
-            <img src={movie.image.medium} alt={movie.name} />
-          ) : (
-            <p>No image</p>
-          )}
+      <section className="favorites-grid">
+        {favoriteMovies.map((movie) => (
+          <article className="favorite-card" key={movie.id}>
+            <h3>{movie.name}</h3>
 
-          <p>Description: {movie.summary ?? "No description"}</p>
+            {movie.image ? (
+              <img src={movie.image.medium} alt={movie.name} />
+            ) : (
+              <p>No image</p>
+            )}
 
-          <button onClick={() => remove(movie.id)}>
-            Remove from favorites
-          </button>
-        </article>
-      ))}
-    </>
+            <p>{movie.summary ?? "No description"}</p>
+
+            <button onClick={() => remove(movie.id)}>
+              Remove from favorites
+            </button>
+          </article>
+        ))}
+      </section>
+    </main>
   );
 };
 

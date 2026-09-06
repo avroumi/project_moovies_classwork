@@ -34,8 +34,11 @@ const Movies = () => {
 
   return (
     <>
-      <SearchBar search={search} setSearch={setSearch} />
-      <MovieList movies={filteredData} />
+      <main className="movies-page">
+        <h2>Discover Movies</h2>
+        <SearchBar search={search} setSearch={setSearch} />
+        <MovieList movies={filteredData} />
+      </main>
     </>
   );
 };
